@@ -175,48 +175,48 @@
       margin-bottom: 4px;
     }
 
-    /* Dashboard Iframe Container */
-    .dashboard-container {
+    /* Dashboard iframe */
+    .dashboard-embed {
       width: 100%;
-      height: 800px;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
+      height: 860px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
       overflow: hidden;
-      background: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     }
 
-    .dashboard-container iframe {
+    .dashboard-embed iframe {
       width: 100%;
       height: 100%;
       border: none;
+      display: block;
+      background: #ffffff;
     }
 
-    .dashboard-notice {
-      background-color: #f0f9ff;
+    .dashboard-note {
+      background: #f0f9ff;
       border: 1px solid #0284c7;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      text-align: center;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 18px;
+      color: #0f172a;
     }
 
-    .dashboard-notice p {
-      color: #0284c7;
-      margin: 0;
+    .dashboard-note strong {
+      color: #0f172a;
     }
 
-    .dashboard-notice a {
+    .dashboard-note a {
       color: #0284c7;
+      font-weight: 600;
       text-decoration: none;
-      font-weight: bold;
     }
 
-    .dashboard-notice a:hover {
+    .dashboard-note a:hover {
       text-decoration: underline;
     }
 
-    /* Responsive Design */
     @media (max-width: 850px) {
       body {
         flex-direction: column;
@@ -233,8 +233,8 @@
         padding: 12px;
         font-size: 0.9rem;
       }
-      .dashboard-container {
-        height: 600px;
+      .dashboard-embed {
+        height: 700px;
       }
     }
   </style>
@@ -369,43 +369,23 @@
       </div>
     </section>
 
-    <!-- PAGE 4: Interactive Dashboard -->
+    <!-- PAGE 4: Dashboard -->
     <section id="dashboard" class="tab-content">
-      <h2 class="section-title">📊 Interactive Research Dashboard</h2>
-      
-      <div class="dashboard-notice">
-        <p>🚀 <strong>Interactive Streamlit Dashboard</strong> - Explore research data visualization and analysis</p>
-        <p><a href="https://jsyaneza-colombia-road-infrastructure-data-stage-1-dashboard-candidates-qmtz1z.streamlit.app" target="_blank">📌 Open Dashboard in New Window</a></p>
+      <h2 class="section-title">📊 Interactive Dashboard</h2>
+
+      <div class="dashboard-note">
+        <strong>Embedded dashboard:</strong> this app is presented directly inside the portfolio. If it does not load immediately, the streamlit app may still be starting or may block embedding by policy.
+        <br>
+        <a href="https://colombia-road-infrastructure-data-stage-1-unoa3z92n8mhbwwejis8.streamlit.app/" target="_blank" rel="noopener noreferrer">Open dashboard in a separate tab</a>
       </div>
 
-      <div class="card">
-        <h3>Dashboard Description</h3>
-        <p>
-          This interactive dashboard showcases the analysis of road infrastructure impact on Colombian regional development. The dashboard provides:
-        </p>
-        <ul>
-          <li><strong>Data Visualization:</strong> Interactive maps and charts showing infrastructure networks across Colombian municipalities</li>
-          <li><strong>Productivity Analysis:</strong> Comparative analysis of productivity gaps between regions</li>
-          <li><strong>Accessibility Metrics:</strong> Municipal accessibility indices based on road infrastructure</li>
-          <li><strong>Time Series Analysis:</strong> Temporal trends in road development and economic indicators</li>
-          <li><strong>Geospatial Analysis:</strong> Geographic distribution patterns and network effects</li>
-        </ul>
+      <div class="dashboard-embed">
+        <iframe
+          title="Research Dashboard"
+          src="https://colombia-road-infrastructure-data-stage-1-unoa3z92n8mhbwwejis8.streamlit.app/"
+          allowfullscreen>
+        </iframe>
       </div>
-
-      <div class="card">
-        <h3>How to Use the Dashboard</h3>
-        <ol>
-          <li>Click "Open Dashboard in New Window" above to launch the interactive interface</li>
-          <li>Use the sidebar filters to customize your analysis</li>
-          <li>Hover over charts for detailed information</li>
-          <li>Explore different sections: Overview, Data Analysis, and Geographic Insights</li>
-          <li>Download visualizations for your research or presentations</li>
-        </ol>
-      </div>
-
-      <p style="text-align: center; color: #94a3b8; margin-top: 40px; font-size: 0.9rem;">
-        <em>Dashboard powered by Streamlit | Data analysis includes Colombian infrastructure networks and economic indicators</em>
-      </p>
     </section>
 
   </main>

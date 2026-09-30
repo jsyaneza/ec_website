@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juan Sebastián Yáñez Albarracín - Portafolio Académico</title>
+  <title>Juan Sebastián Yáñez Albarracín - Academic Portfolio</title>
   <style>
-    /* Estilos Generales */
+    /* General Styles */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,7 +19,7 @@
       color: #333;
     }
 
-    /* Columna Izquierda: Barra Lateral */
+    /* Left Column: Sidebar */
     .sidebar {
       width: 320px;
       background-color: #1e293b;
@@ -70,14 +70,14 @@
       margin-bottom: 8px;
     }
 
-    /* Columna Derecha: Contenido Principal */
+    /* Right Column: Main Content */
     .main-content {
       flex-grow: 1;
       display: flex;
       flex-direction: column;
     }
 
-    /* Menú de Navegación */
+    /* Navigation Menu */
     .nav-tabs {
       display: flex;
       background-color: #ffffff;
@@ -105,7 +105,7 @@
       background-color: #ffffff;
     }
 
-    /* Contenido de Secciones */
+    /* Section Content */
     .tab-content {
       display: none;
       padding: 40px;
@@ -154,7 +154,7 @@
       border-left: 4px solid #0284c7;
     }
 
-    /* Grid para Habilidades */
+    /* Skills Grid */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -173,7 +173,7 @@
       margin-bottom: 4px;
     }
 
-    /* Diseño Adaptable */
+    /* Responsive Design */
     @media (max-width: 850px) {
       body {
         flex-direction: column;
@@ -194,111 +194,111 @@
 </head>
 <body>
 
-  <!-- COLUMNA IZQUIERDA -->
+  <!-- LEFT COLUMN -->
   <aside class="sidebar">
     <div class="profile-info">
-      <h1>JUAN SEBASTIÁN YAÑEZ ALBARRACÍN</h1>
+      <h1>JUAN SEBASTIÁN YÁÑEZ ALBARRACÍN</h1>
       <h2>Visual Artist · Biologist · Researcher</h2>
       
       <div class="univ-details">
-        <p><strong>Universidad:</strong> Nagoya University</p>
-        <p><strong>Escuela:</strong> Graduate School of International Development (GSID)</p>
-        <p><strong>Supervisión:</strong> Prof. Carlos Méndez</p>
-        <p><strong>Línea:</strong> Econometría Regional, Desarrollo Espacial y Geografía Económica Cuantitativa</p>
+        <p><strong>University:</strong> Nagoya University</p>
+        <p><strong>School:</strong> Graduate School of International Development (GSID)</p>
+        <p><strong>Advisor:</strong> Prof. Carlos Méndez</p>
+        <p><strong>Research Focus:</strong> Regional Econometrics, Spatial Development and Quantitative Economic Geography</p>
       </div>
     </div>
 
     <div class="contact-info">
-      <p><strong>Contacto:</strong></p>
+      <p><strong>Contact:</strong></p>
       <p>Email: jsyaneza@unal.edu.co</p>
-      <p>Ubicación: Bogotá DC, Colombia</p>
-      <p>Teléfono: +57 (316) 520 8921</p>
+      <p>Location: Bogotá DC, Colombia</p>
+      <p>Phone: +57 (316) 520 8921</p>
     </div>
   </aside>
 
-  <!-- COLUMNA DERECHA -->
+  <!-- RIGHT COLUMN -->
   <main class="main-content">
     
-    <!-- Menú -->
+    <!-- Menu -->
     <nav class="nav-tabs">
-      <button class="tab-btn active" onclick="switchTab(event, 'intereses')">Intereses de Investigación</button>
+      <button class="tab-btn active" onclick="switchTab(event, 'interests')">Research Interests</button>
       <button class="tab-btn" onclick="switchTab(event, 'cv')">Curriculum Vitae</button>
-      <button class="tab-btn" onclick="switchTab(event, 'proyectos')">Proyectos</button>
+      <button class="tab-btn" onclick="switchTab(event, 'projects')">Projects</button>
     </nav>
 
-    <!-- PÁGINA 1: Intereses -->
-    <section id="intereses" class="tab-content active">
-      <h2 class="section-title">Intereses de Investigación</h2>
+    <!-- PAGE 1: Research Interests -->
+    <section id="interests" class="tab-content active">
+      <h2 class="section-title">Research Interests</h2>
       
       <div class="card">
-        <h3>Enfoque y Propósito Académico</h3>
+        <h3>Academic Focus and Purpose</h3>
         <p>
-          Mi motivación académica surge del interés por comprender cómo las personas interactúan con su entorno y cómo las decisiones sistémicas moldean las oportunidades de desarrollo. Trascendiendo la visión determinista del crecimiento económico, busco entender la naturaleza multidimensional del desarrollo territorial desde una perspectiva integradora que reconoce las interconexiones entre factores espaciales, económicos, sociales y ambientales.
+          My academic motivation stems from an interest in understanding how people interact with their environment and how systemic decisions shape development opportunities. Transcending the deterministic view of economic growth, I seek to understand the multidimensional nature of territorial development from an integrative perspective that recognizes the interconnections between spatial, economic, social, and environmental factors.
         </p>
         <p>
-          Mi objetivo de investigación es utilizar herramientas técnicas y econométricas para analizar dinámicas territoriales, modelar interacciones regionales y proponer recomendaciones de política pública fundamentadas en evidencia empírica que impulsen el desarrollo inclusivo y sostenible de las regiones colombianas.
+          My research objective is to use technical and econometric tools to analyze territorial dynamics, model regional interactions, and propose evidence-based public policy recommendations that drive inclusive and sustainable development in Colombian regions.
         </p>
       </div>
 
       <div class="card">
-        <h3>Líneas de Interés Principal</h3>
+        <h3>Main Research Areas</h3>
         <ul>
-          <li><strong>Econometría Regional y Geografía Económica Cuantitativa:</strong> Análisis de las brechas de productividad entre departamentos y municipios de Colombia.</li>
-          <li><strong>Análisis Espacial y Redes de Transporte:</strong> Evaluación del impacto de la geografía, infraestructura vial y efectos de aglomeración en las dinámicas socioeconómicas regionales.</li>
-          <li><strong>Evaluación Cuantitativa y Economía del Desarrollo:</strong> Modelado cuantitativo e intersectorial de heterogeneidades regionales y desigualdades territoriales.</li>
+          <li><strong>Regional Econometrics and Quantitative Economic Geography:</strong> Analysis of productivity gaps between Colombian departments and municipalities.</li>
+          <li><strong>Spatial Analysis and Transport Networks:</strong> Evaluation of the impact of geography, road infrastructure, and agglomeration effects on regional socioeconomic dynamics.</li>
+          <li><strong>Quantitative Evaluation and Development Economics:</strong> Quantitative and intersectoral modeling of regional heterogeneities and territorial inequalities.</li>
         </ul>
       </div>
     </section>
 
-    <!-- PÁGINA 2: CV -->
+    <!-- PAGE 2: CV -->
     <section id="cv" class="tab-content">
       <h2 class="section-title">Curriculum Vitae</h2>
 
       <div class="card">
-        <h3>Perfil</h3>
+        <h3>Professional Profile</h3>
         <p>
-          Artista visual y biólogo con sólida experiencia empresarial en el sector alimentario como CFO y Gerente de Desarrollo de Negocios en la startup UNOSEIS18. Experiencia combinada en análisis de datos, modelado cuantitativo, planeación estratégica e investigación académica. Actualmente cursando Máster en Desarrollo Internacional con énfasis en econometría regional y geografía económica cuantitativa en Nagoya University, Japón.
+          Visual artist and biologist with solid business experience in the food sector as CFO and Business Development Manager at the startup UNOSEIS18. Combined experience in data analysis, quantitative modeling, strategic planning, and academic research. Currently pursuing a Master's degree in International Development with emphasis on regional econometrics and quantitative economic geography at Nagoya University, Japan.
         </p>
       </div>
 
       <div class="card">
-        <h3>Educación</h3>
+        <h3>Education</h3>
         <ul>
-          <li><strong>Pregrado en Biología:</strong> Universidad Nacional de Colombia - Bogotá (Ago 2009 – Abr 2018)</li>
-          <li><strong>Pregrado en Artes Plásticas y Visuales:</strong> Universidad Distrital Francisco José de Caldas - Bogotá (Feb 2005 – Dic 2011) — <em>Mención meritoria por el trabajo de grado</em></li>
-          <li><strong>Bachillerato:</strong> Centro Educativo Distrital Castilla (1999 – 2004)</li>
+          <li><strong>Bachelor's Degree in Biology:</strong> National University of Colombia - Bogotá (Aug 2009 – Apr 2018)</li>
+          <li><strong>Bachelor's Degree in Plastic and Visual Arts:</strong> Francisco José de Caldas District University - Bogotá (Feb 2005 – Dec 2011) — <em>Honorable mention for thesis work</em></li>
+          <li><strong>High School:</strong> District Educational Center Castilla (1999 – 2004)</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3>Educación Complementaria y Certificaciones</h3>
+        <h3>Complementary Education and Certifications</h3>
         <ul>
-          <li><strong>Beca Latin American Talents & Diplomado en Data Analytics:</strong> (2020 – 2021)</li>
-          <li><strong>Supervisión de proyectos de grado (Modalidad Capstone):</strong> Convenio Universidad del Rosario / UNOSEIS18 (2022 – Presente)</li>
-          <li><strong>Fortalecimiento Empresarial:</strong> Cámara de Comercio de Bogotá (2013 – 2018)</li>
-          <li><strong>Educación Continua en Matemáticas Financieras:</strong> (2017)</li>
+          <li><strong>Latin American Talents Scholarship & Data Analytics Diploma:</strong> (2020 – 2021)</li>
+          <li><strong>Supervision of degree projects (Capstone Modality):</strong> Agreement between Universidad del Rosario / UNOSEIS18 (2022 – Present)</li>
+          <li><strong>Business Development:</strong> Bogotá Chamber of Commerce (2013 – 2018)</li>
+          <li><strong>Continuing Education in Financial Mathematics:</strong> (2017)</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3>Experiencia Profesional</h3>
-        <p><strong>UNOSEIS18 (Start-up) — CFO & Business Development Manager</strong> (Dic 2012 – Presente)</p>
+        <h3>Professional Experience</h3>
+        <p><strong>UNOSEIS18 (Start-up) — CFO & Business Development Manager</strong> (Dec 2012 – Present)</p>
         <ul>
-          <li>Supervisión del despliegue de planes de negocio estratégicos para cumplir objetivos contables, normativos y de ingresos.</li>
-          <li>Análisis de información financiera detallada y preparación de reportes de rentabilidad.</li>
-          <li>Diseño e implementación de estructuras de precios favorables y estrategias de marketing para nuevos clientes.</li>
-          <li>Implementación de planes de acción correctiva para optimizar operaciones y mejorar eficiencia.</li>
+          <li>Supervision of strategic business plan deployment to meet accounting, regulatory, and revenue objectives.</li>
+          <li>Analysis of detailed financial information and preparation of profitability reports.</li>
+          <li>Design and implementation of favorable pricing structures and marketing strategies for new clients.</li>
+          <li>Implementation of corrective action plans to optimize operations and improve efficiency.</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3>Habilidades & Software</h3>
+        <h3>Skills & Software</h3>
         <div class="skills-grid">
           <div class="skill-item"><strong>Power BI:</strong> 92%</div>
           <div class="skill-item"><strong>R Software:</strong> 75%</div>
-          <div class="skill-item"><strong>Planeación Estratégica:</strong> 75%</div>
-          <div class="skill-item"><strong>Diseño:</strong> 75%</div>
-          <div class="skill-item"><strong>Gestión de Bases de Datos:</strong> 70%</div>
+          <div class="skill-item"><strong>Strategic Planning:</strong> 75%</div>
+          <div class="skill-item"><strong>Design:</strong> 75%</div>
+          <div class="skill-item"><strong>Database Management:</strong> 70%</div>
           <div class="skill-item"><strong>Python:</strong> 45%</div>
           <div class="skill-item"><strong>Sharp 3D:</strong> 45%</div>
           <div class="skill-item"><strong>MatLab:</strong> 25%</div>
@@ -306,17 +306,17 @@
       </div>
     </section>
 
-    <!-- PÁGINA 3: Proyectos -->
-    <section id="proyectos" class="tab-content">
-      <h2 class="section-title">Proyectos</h2>
+    <!-- PAGE 3: Projects -->
+    <section id="projects" class="tab-content">
+      <h2 class="section-title">Projects</h2>
 
       <div class="card">
-        <h3>Análisis del Impacto de la Infraestructura Vial en el Desarrollo Regional de Colombia</h3>
+        <h3>Analysis of the Impact of Road Infrastructure on Regional Development in Colombia</h3>
         <p>
-          Este proyecto analiza cómo las redes de transporte terrestre y la infraestructura vial afectan la conectividad, los costos de transporte y las brechas de productividad entre municipios colombianos. La investigación integra análisis de redes, econometría espacial y geomática para descomponer los mecanismos a través de los cuales la geografía y la infraestructura moldean las dinámicas regionales.
+          This project analyzes how terrestrial transportation networks and road infrastructure affect connectivity, transport costs, and productivity gaps between Colombian municipalities. The research integrates network analysis, spatial econometrics, and geomatics to decompose the mechanisms through which geography and infrastructure shape regional dynamics.
         </p>
         <p>
-          <strong>Resumen:</strong> Aprovechando metodologías de econometría espacial y análisis cuantitativo geográfico, la investigación aborda las disparidades regionales derivadas de las limitaciones geográficas, la calidad de la infraestructura y los efectos de red. Utilizando datos de Open Street Map y análisis de redes complejas, se desarrollan índices de accesibilidad y conectividad municipal que permiten evaluar el impacto diferenciado de distintas tipologías de infraestructura vial sobre el desarrollo económico territorial.
+          <strong>Summary:</strong> Using spatial econometric methodologies and quantitative geographic analysis, the research addresses regional disparities derived from geographic limitations, infrastructure quality, and network effects. By utilizing Open Street Map data and complex network analysis, the research develops indices of municipal accessibility and connectivity that allow for the evaluation of the differentiated impact of distinct typologies of road infrastructure on territorial economic development.
         </p>
       </div>
     </section>

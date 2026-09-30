@@ -1,41 +1,42 @@
-# 📊 EC Website - Portafolio Académico
+# Academic Portfolio - Juan Sebastián Yáñez Albarracín
 
-Portafolio web académico de **Juan Sebastián Yáñez Albarracín**
+Academic portfolio website for **Juan Sebastián Yáñez Albarracín**.
 
-## 🌐 Acceder al Sitio
+## 🌐 Access the Website
 
-Tu página web está desplegada en GitHub Pages:
+Your web page is deployed on GitHub Pages:
 👉 **https://jsyaneza.github.io/ec_website/**
 
-## 📋 Contenido
+## 📋 Content
 
-- **Intereses de Investigación** - Líneas de investigación y propósito académico
-- **Curriculum Vitae** - Educación, experiencia profesional y habilidades
-- **Proyectos** - Descripción de proyectos académicos en desarrollo
+- **Research Interests** - Research lines and academic purpose
+- **Curriculum Vitae** - Education, professional experience, and skills
+- **Projects** - Description of academic projects in development
 
-## 🛠️ Tecnologías
+## 🛠️ Technologies
 
 - HTML5
 - CSS3
-- JavaScript Vanilla
+- Vanilla JavaScript
 
-## 📱 Características
+## 📱 Features
 
-- ✅ Diseño responsivo (funciona en móviles, tablets y desktop)
-- ✅ Interfaz moderna y limpia
-- ✅ Navegación por tabs
-- ✅ Menú lateral con información de contacto
-- ✅ Compatible con navegadores modernos
+- ✅ Responsive design (works on mobile, tablets, and desktop)
+- ✅ Modern and clean interface
+- ✅ Tab-based navigation
+- ✅ Sidebar with contact information
+- ✅ Compatible with modern browsers
 
-## 🚀 Cómo Contribuir
+## 🚀 How to Contribute
 
-Si deseas hacer cambios:
+If you want to make changes:
 
-1. Edita el archivo `index.html` directamente en GitHub
-2. O clona el repositorio y abre Pull Requests
+1. Edit the `index.html` file directly on GitHub
+2. Or clone the repository and open Pull Requests
 
-## 📧 Contacto
+## 📧 Contact Information
 
 - Email: jsyaneza@unal.edu.co
-- Teléfono: +57 (316) 520 8921
-- Ubicación: Bogotá DC, Colombia
+- Phone: +57 (316) 520 8921
+- Location: Bogotá DC, Colombia
+- University: Nagoya University

@@ -176,48 +176,6 @@
       margin-bottom: 4px;
     }
 
-    /* Dashboard iframe */
-    .dashboard-embed {
-      width: 100%;
-      height: 860px;
-      border: 1px solid #dbe3ef;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-    }
-
-    .dashboard-embed iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-      background: #ffffff;
-    }
-
-    .dashboard-note {
-      background: #f0f9ff;
-      border: 1px solid #0284c7;
-      border-radius: 10px;
-      padding: 18px 20px;
-      margin-bottom: 18px;
-      color: #0f172a;
-    }
-
-    .dashboard-note strong {
-      color: #0f172a;
-    }
-
-    .dashboard-note a {
-      color: #0284c7;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .dashboard-note a:hover {
-      text-decoration: underline;
-    }
-
     @media (max-width: 850px) {
       body {
         flex-direction: column;
@@ -233,9 +191,6 @@
         text-align: center;
         padding: 12px;
         font-size: 0.9rem;
-      }
-      .dashboard-embed {
-        height: 700px;
       }
     }
   </style>
@@ -267,12 +222,11 @@
   <!-- RIGHT COLUMN -->
   <main class="main-content">
     
-    <!-- Menu -->
+    <!-- Navigation Menu: 3 tabs only -->
     <nav class="nav-tabs">
       <button class="tab-btn active" onclick="switchTab(event, 'interests')">Research Interests</button>
       <button class="tab-btn" onclick="switchTab(event, 'cv')">Curriculum Vitae</button>
       <button class="tab-btn" onclick="switchTab(event, 'projects')">Projects</button>
-      <button class="tab-btn" onclick="switchTab(event, 'dashboard')">📊 Interactive Dashboard</button>
     </nav>
 
     <!-- PAGE 1: Research Interests -->
@@ -293,7 +247,7 @@
         <h3>Main Research Areas</h3>
         <ul>
           <li><strong>Regional Econometrics and Quantitative Economic Geography:</strong> Analysis of productivity gaps between Colombian departments and municipalities.</li>
-          <li><strong>Spatial Analysis and Transport Networks:</strong> Evaluation of the impact of geography, road infrastructure, and agglomeration effects on regional socioeconomic dynamics.[...]</li>
+          <li><strong>Spatial Analysis and Transport Networks:</strong> Evaluation of the impact of geography, road infrastructure, and agglomeration effects on regional socioeconomic dynamics.</li>
           <li><strong>Quantitative Evaluation and Development Economics:</strong> Quantitative and intersectoral modeling of regional heterogeneities and territorial inequalities.</li>
         </ul>
       </div>
@@ -353,8 +307,23 @@
           <div class="skill-item"><strong>MatLab:</strong> 25%</div>
         </div>
       </div>
+    </section>
 
-      <!-- Timeline Section -->
+    <!-- PAGE 3: Projects (with Timeline) -->
+    <section id="projects" class="tab-content">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="card">
+        <h3>Analysis of the Impact of Road Infrastructure on Regional Development in Colombia</h3>
+        <p>
+          This project analyzes how terrestrial transportation networks and road infrastructure affect connectivity, transport costs, and productivity gaps between Colombian municipalities. The r[...]
+        </p>
+        <p>
+          <strong>Summary:</strong> Using spatial econometric methodologies and quantitative geographic analysis, the research addresses regional disparities derived from geographic limitations, [...]
+        </p>
+      </div>
+
+      <!-- Timeline Section - MOVED TO PROJECTS TAB -->
       <div class="timeline-container">
         <!-- M1: Academic Development -->
         <div class="timeline-year-group">
@@ -378,7 +347,7 @@
                     <li>Research thesis on regional biodiversity patterns</li>
                     <li>Foundation for quantitative research methods</li>
                   </ul>
-                  <a href="#" class="streamlit-action-btn">View Details</a>
+                  <a href="javascript:void(0);" class="streamlit-action-btn" onclick="return false;">View Details</a>
                 </div>
               </div>
             </div>
@@ -401,7 +370,7 @@
                     <li>Advanced design and conceptual thinking</li>
                     <li>Portfolio development and artistic direction</li>
                   </ul>
-                  <a href="#" class="streamlit-action-btn">View Details</a>
+                  <a href="javascript:void(0);" class="streamlit-action-btn" onclick="return false;">View Details</a>
                 </div>
               </div>
             </div>
@@ -424,7 +393,7 @@
                     <li>Client relationship management</li>
                     <li>Business opportunity analysis</li>
                   </ul>
-                  <a href="#" class="streamlit-action-btn">View Details</a>
+                  <a href="javascript:void(0);" class="streamlit-action-btn" onclick="return false;">View Details</a>
                 </div>
               </div>
             </div>
@@ -453,7 +422,7 @@
                     <li>Statistical modeling and regression analysis</li>
                     <li>Data visualization and storytelling</li>
                   </ul>
-                  <a href="#" class="streamlit-action-btn">View Details</a>
+                  <a href="javascript:void(0);" class="streamlit-action-btn" onclick="return false;">View Details</a>
                 </div>
               </div>
             </div>
@@ -476,7 +445,7 @@
                     <li>Infrastructure impact analysis</li>
                     <li>Advisor: Prof. Carlos Méndez</li>
                   </ul>
-                  <a href="#" class="streamlit-action-btn">View Details</a>
+                  <a href="javascript:void(0);" class="streamlit-action-btn" onclick="return false;">View Details</a>
                 </div>
               </div>
             </div>
@@ -499,7 +468,7 @@
                     <li>Regional disparities analysis</li>
                     <li>Policy recommendations</li>
                   </ul>
-                  <a href="#" class="streamlit-action-btn">View Details</a>
+                  <a href="javascript:void(0);" class="streamlit-action-btn" onclick="return false;">View Details</a>
                 </div>
               </div>
             </div>
@@ -508,44 +477,11 @@
       </div>
     </section>
 
-    <!-- PAGE 3: Projects -->
-    <section id="projects" class="tab-content">
-      <h2 class="section-title">Projects</h2>
-
-      <div class="card">
-        <h3>Analysis of the Impact of Road Infrastructure on Regional Development in Colombia</h3>
-        <p>
-          This project analyzes how terrestrial transportation networks and road infrastructure affect connectivity, transport costs, and productivity gaps between Colombian municipalities. The r[...]
-        </p>
-        <p>
-          <strong>Summary:</strong> Using spatial econometric methodologies and quantitative geographic analysis, the research addresses regional disparities derived from geographic limitations, [...]
-        </p>
-      </div>
-    </section>
-
-    <!-- PAGE 4: Dashboard -->
-    <section id="dashboard" class="tab-content">
-      <h2 class="section-title">📊 Interactive Dashboard</h2>
-
-      <div class="dashboard-note">
-        <strong>Embedded dashboard:</strong> this app is presented directly inside the portfolio. If it does not load immediately, the streamlit app may still be starting or may block embedding b[...]
-        <br>
-        <a href="https://colombia-road-infrastructure-data-stage-1-unoa3z92n8mhbwwejis8.streamlit.app/" target="_blank" rel="noopener noreferrer">Open dashboard in a separate tab</a>
-      </div>
-
-      <div class="dashboard-embed">
-        <iframe
-          title="Research Dashboard"
-          src= "https://colombia-road-infrastructure-data-stage-1-unoa3z92n8mhbwwejis8.streamlit.app/"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </section>
-
   </main>
 
   <script>
     function switchTab(event, tabId) {
+      event.preventDefault();
       const contents = document.querySelectorAll('.tab-content');
       contents.forEach(content => content.classList.remove('active'));
 

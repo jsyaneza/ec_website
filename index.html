@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Sebastián Yáñez Albarracín - Academic Portfolio</title>
+  <style>
+    /* General Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background-color: #f4f6f9;
+      color: #333;
+    }
+
+    /* Left Column: Sidebar (320px width) */
+    .sidebar {
+      width: 320px;
+      background-color: #1e293b;
+      color: #ffffff;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .profile-info {
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #334155;
+    }
+    
+    /* Profile Image Styles (250px diameter, 40px margin) */
+    .profile-img-container {
+      width: 250px;
+      height: 250px;
+      margin: 0 auto 40px auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #38bdf8;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .profile-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-info h1 {
+      font-size: 1.35rem;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .profile-info h2 {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #38bdf8;
+      margin-bottom: 15px;
+    }
+    .univ-details {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #ffffff;
+      text-align: left;
+      background-color: #0f172a;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .univ-details strong {
+      color: #38bdf8;
+    }
+    .univ-details p {
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .univ-details p:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-info {
+      margin-top: auto;
+      font-size: 0.85rem;
+      color: #ffffff;
+      border-top: 1px solid #334155;
+      padding-top: 20px;
+    }
+    .contact-info p {
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+    .contact-info strong {
+      color: #38bdf8;
+    }
+
+    /* Right Column: Main Content */
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation Menu */
+    .nav-tabs {
+      display: flex;
+      background-color: #ffffff;
+      border-bottom: 2px solid #e2e8f0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .tab-btn {
+      padding: 18px 25px;
+      border: none;
+      background: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
+    }
+    .tab-btn:hover {
+      color: #0284c7;
+      background-color: #f8fafc;
+    }
+    .tab-btn.active {
+      color: #0284c7;
+      border-bottom-color: #0284c7;
+      background-color: #ffffff;
+    }
+
+    /* Section Content */
+    .tab-content {
+      display: none;
+      padding: 40px;
+      max-width: 900px;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    h2.section-title {
+      font-size: 1.8rem;
+      color: #0f172a;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #0284c7;
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+    h3 {
+      font-size: 1.15rem;
+      color: #1e293b;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #334155;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+      color: #334155;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      border-left: 4px solid #0284c7;
+    }
+
+    /* --- INTERACTIVE TIMELINE STYLES --- */
+    .timeline-container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .thesis-intro-card {
+      background: #ffffff;
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      border-left: 4px solid #0284c7;
+    }
+    .thesis-intro-card h3 {
+      margin-top: 0;
+      color: #0f172a;
+    }
+    .thesis-intro-card p {
+      margin-bottom: 0;
+      color: #334155;
+      font-size: 0.95rem;
+    }
+
+    .timeline-instruction {
+      font-size: 0.9rem;
+      color: #64748b;
+      font-style: italic;
+      margin-bottom: 25px;
+      background: #e2e8f0;
+      padding: 8px 15px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .timeline-year-group {
+      margin-bottom: 50px;
+    }
+
+    .timeline-year-title {
+      font-size: 1.4rem;
+      color: #0f172a;
+      background: #e0f2fe;
+      padding: 10px 20px;
+      border-left: 5px solid #0284c7;
+      border-radius: 4px;
+      margin-bottom: 30px;
+      display: inline-block;
+    }
+
+    .timeline-wrapper {
+      position: relative;
+      padding-left: 35px;
+    }
+
+    .timeline-wrapper::before {
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      bottom: 10px;
+      width: 3px;
+      background-color: #cbd5e1;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .timeline-node {
+      position: absolute;
+      left: -35px;
+      top: 35px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 4px solid #0284c7;
+      box-shadow: 0 0 0 4px #e0f2fe;
+      z-index: 200;
+      cursor: pointer;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    .timeline-node.active-node {
+      border-color: #10b981 !important;
+      box-shadow: 0 0 0 4px #d1fae5 !important;
+      background-color: #ecfdf5 !important;
+    }
+
+    .timeline-card {
+      width: 110px;
+      height: 110px;
+      background: #ffffff;
+      border: 2px solid #0284c7;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      padding: 12px;
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transform-origin: center center;
+      overflow: hidden;
+    }
+
+    .status-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 6px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    .status-completed { background-color: #dcfce7; color: #166534; }
+    .status-inprogress { background-color: #fef9c3; color: #854d0e; }
+    .status-pending { background-color: #f1f5f9; color: #475569; }
+
+    .card-title-short {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .card-details {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      opacity: 0;
+      pointer-events: none;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: hidden;
+    }
+
+    .card-details h3 {
+      font-size: 1rem;
+      color: #1e293b;
+      margin: 0 0 6px 0;
+    }
+
+    .card-details p {
+      font-size: 0.85rem;
+      color: #334155;
+      line-height: 1.4;
+      margin: 0 0 6px 0;
+    }
+
+    .card-details ul {
+      margin: 0 0 6px 16px;
+      font-size: 0.82rem;
+      color: #334155;
+    }
+
+    .card-details li {
+      margin-bottom: 2px;
+    }
+
+    .timeline-note {
+      font-size: 0.8rem;
+      color: #64748b;
+      font-style: italic;
+      margin-top: 2px;
+    }
+
+    .streamlit-action-btn {
+      display: inline-block;
+      margin-top: auto;
+      background-color: #0284c7;
+      color: #ffffff;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      text-align: center;
+      width: fit-content;
+    }
+
+    .streamlit-action-btn:hover {
+      background-color: #0369a1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 850px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+      }
+      .nav-tabs {
+        flex-wrap: wrap;
+      }
+      .tab-btn {
+        flex: 1;
+        text-align: center;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LEFT COLUMN: SIDEBAR -->
+  <aside class="sidebar">
+    <div class="profile-info">
+      <!-- Profile Image (250px diameter, 40px bottom margin) -->
+      <div class="profile-img-container">
+        <img src="photo.jpg" alt="Juan Sebastián Yáñez Albarracín">
+      </div>
+      
+      <h1>JUAN SEBASTIÁN YAÑEZ ALBARRACÍN</h1>
+      <h2>Visual Artist · Biologist · Researcher</h2>
+      
+      <div class="univ-details">
+        <p><strong>University:</strong> Nagoya University</p>
+        <p><strong>Graduate School:</strong> Graduate School of International Development (GSID)</p>
+        <p><strong>Supervision:</strong> Prof. Carlos Méndez</p>
+        <p><strong>Field:</strong> Regional Econometrics, Spatial Development, and Quantitative Economic Geography</p>
+      </div>
+    </div>
+
+    <div class="contact-info">
+      <p><strong>Contact:</strong></p>
+      <p>Email: jsyaneza.studio [a] gmail.com</p>
+      <p>Location: Nagoya, Japan</p>
+    </div>
+
+    <!-- External module script hook for the sidebar video game animation -->
+    <script src="sidebar-animation.js"></script>
+  </aside>
+
+  <!-- RIGHT COLUMN: MAIN CONTENT -->
+  <main class="main-content">
+    
+    <!-- Menu -->
+    <nav class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab(event, 'intereses')">Research Interests</button>
+      <button class="tab-btn" onclick="switchTab(event, 'cv')">Curriculum Vitae</button>
+      <button class="tab-btn" onclick="switchTab(event, 'proyectos')">Master's Thesis</button>
+    </nav>
+
+    <!-- TAB 1: Research Interests -->
+    <section id="intereses" class="tab-content active">
+      <h2 class="section-title">Research Interests</h2>
+      
+      <div class="card">
+        <h3>Focus and Academic Purpose</h3>
+        <p>
+          My academic motivation stems from a deep interest in understanding how people interact with their environment and how systemic decisions shape development opportunities. After twelve years of experience managing a business in the food sector, I experienced at a micro scale the consequences of public policies, market fluctuations, and regional productivity gaps.
+        </p>
+        <p>
+          My research objective is to use technical and econometric tools to analyze territorial dynamics, model regional interactions, and propose evidence-based public policy recommendations.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Main Lines of Interest</h3>
+        <ul>
+          <li><strong>Regional Econometrics and Quantitative Economic Geography:</strong> Analysis of productivity gaps across departments and municipalities in Colombia.</li>
+          <li><strong>Spatial Analysis and Transport Networks:</strong> Evaluation of the impact of geography, road infrastructure, and agglomeration effects on socioeconomic dynamics.</li>
+          <li><strong>Quantitative Evaluation and Development Economics:</strong> Quantitative and intersectoral modeling of regional heterogeneities and territorial inequalities.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB 2: Curriculum Vitae -->
+    <section id="cv" class="tab-content">
+      <h2 class="section-title">Curriculum Vitae</h2>
+
+      <div class="card">
+        <h3>Profile</h3>
+        <p>
+          Visual artist and biologist with solid business experience in the food sector as CFO and Business Development Manager at the startup UNOSEIS18. Combined experience in quantitative analysis, finance, market strategy, and real-world problem solving.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Education</h3>
+        <ul>
+          <li><strong>Master's in International Development:</strong> Nagoya University - Graduate School of International Development (GSID) (2026 – Present, Expected Graduation: 2028)</li>
+          <li><strong>B.Sc. in Biology:</strong> National University of Colombia - Bogotá (Aug 2009 – Apr 2018)</li>
+          <li><strong>B.A. in Plastic and Visual Arts:</strong> District University Francisco José de Caldas - Bogotá (Feb 2005 – Dec 2011) — <em>Meritorious mention for the thesis project "Solid Cold"</em></li>
+          <li><strong>High School:</strong> Centro Educativo Distrital Castilla (1999 – 2004)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Complementary Education & Certifications</h3>
+        <ul>
+          <li><strong>Latin American Talents Scholarship & Data Analytics Diploma:</strong> (2020 – 2021)</li>
+          <li><strong>Supervision of Capstone Projects:</strong> Universidad del Rosario / UNOSEIS18 Agreement (2022 – Present)</li>
+          <li><strong>Business Strengthening Program:</strong> Bogotá Chamber of Commerce (2013 – 2018)</li>
+          <li><strong>Continuing Education in Financial Mathematics:</strong> (2017)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Professional Experience</h3>
+        <p><strong>UNOSEIS18 (Start-up) — CFO & Business Development Manager</strong> (2012 – 2024)</p>
+        <ul>
+          <li>Supervised the deployment of strategic business plans to meet accounting, regulatory, and revenue objectives.</li>
+          <li>Analyzed detailed financial information and prepared profitability reports.</li>
+          <li>Designed and implemented favorable pricing structures and marketing strategies for new clients.</li>
+          <li>Implemented corrective action plans to optimize operations and improve efficiency.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB 3: Master's Thesis Project -->
+    <section id="proyectos" class="tab-content">
+      <h2 class="section-title">Master's Thesis Project</h2>
+      
+      <div class="timeline-container">
+        <!-- Thesis Description Card based on image text -->
+        <div class="thesis-intro-card">
+          <h3>Road Infrastructure Improvements and Local Development in Colombia</h3>
+          <p>Evidence from Difference-in-Differences and/or Synthetic Control. This research evaluates the regional impacts of infrastructure expansion using advanced econometric evaluation techniques across academic stages.</p>
+        </div>
+
+        <!-- Instruction Notice -->
+        <div class="timeline-instruction">
+          Click on any timeline node or card to expand and view details.
+        </div>
+
+        <!-- M1 GROUP -->
+        <div class="timeline-year-group">
+          <div class="timeline-year-title">M1 (Master's Year 1)</div>
+          <div class="timeline-wrapper">
+
+            <!-- Stage 1 -->
+            <div class="timeline-item">
+              <div class="timeline-node" data-target="card-1"></div>
+              <div class="timeline-card" id="card-1">
+                <div class="card-front-content">
+                  <span class="status-badge status-completed">Completed</span>
+                  <div class="card-title-short">Stage 1</div>
+                </div>
+                <div class="card-details">
+                  <span class="status-badge status-completed">Completed</span>
+                  <h3>Stage 1: Initial Information Assessment</h3>
+                  <p>Verification and adjustment of databases to identify minimum viable variables and complete status.</p>
+                  <p><strong>Result:</strong> Selection of 3 candidates to perform a small-sample Difference-in-Differences (DiD) analysis and test a synthetic control method with clustering.</p>
+                  <p class="timeline-note">Note: The control group is significantly larger than the treatment group.</p>
+                  <a href="https://colombia-road-infrastructure-data-stage-1-unoa3z92n8mhbwwejis8.streamlit.app/" target="_blank" class="streamlit-action-btn">
+                    Launch Stage 1 Dashboard
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 2.1 -->
+            <div class="timeline-item">
+              <div class="timeline-node" data-target="card-2-1"></div>
+              <div class="timeline-card" id="card-2-1">
+                <div class="card-front-content">
+                  <span class="status-badge status-inprogress">In Progress</span>
+                  <div class="card-title-short">Stage 2.1</div>
+                </div>
+                <div class="card-details">
+                  <span class="status-badge status-inprogress">In Progress</span>
+                  <h3>Stage 2.1: Control Group Evaluation and Testing</h3>
+                  <p>Reviewing academic literature to deeply understand the methodology and establishing a robust strategy to define control groups.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 2.2 -->
+            <div class="timeline-item">
+              <div class="timeline-node" data-target="card-2-2"></div>
+              <div class="timeline-card" id="card-2-2">
+                <div class="card-front-content">
+                  <span class="status-badge status-inprogress">In Progress</span>
+                  <div class="card-title-short">Stage 2.2</div>
+                </div>
+                <div class="card-details">
+                  <span class="status-badge status-inprogress">In Progress</span>
+                  <h3>Stage 2.2: Database Refinement and Preliminary Results</h3>
+                  <p>Aimed at perfecting databases for model execution and validating the consistency of initial findings.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- M2 GROUP -->
+        <div class="timeline-year-group">
+          <div class="timeline-year-title">M2 (Master's Year 2)</div>
+          <div class="timeline-wrapper">
+
+            <!-- Stage 3.1 -->
+            <div class="timeline-item">
+              <div class="timeline-node" data-target="card-3-1"></div>
+              <div class="timeline-card" id="card-3-1">
+                <div class="card-front-content">
+                  <span class="status-badge status-pending">Pending</span>
+                  <div class="card-title-short">Stage 3.1</div>
+                </div>
+                <div class="card-details">
+                  <span class="status-badge status-pending">Pending / Not Started</span>
+                  <h3>Stage 3.1: Controls, Validation, Robustness Checks, and Project Extensions</h3>
+                  <p>Execution of robustness tests, validation protocols, and methodological extensions.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 3.2 -->
+            <div class="timeline-item">
+              <div class="timeline-node" data-target="card-3-2"></div>
+              <div class="timeline-card" id="card-3-2">
+                <div class="card-front-content">
+                  <span class="status-badge status-pending">Pending</span>
+                  <div class="card-title-short">Stage 3.2</div>
+                </div>
+                <div class="card-details">
+                  <span class="status-badge status-pending">Pending / Not Started</span>
+                  <h3>Stage 3.2: Document Drafting and Core Sections</h3>
+                  <p>Development of the theoretical framework, methodology section, and initial results write-up.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="timeline-item">
+              <div class="timeline-node" data-target="card-4"></div>
+              <div class="timeline-card" id="card-4">
+                <div class="card-front-content">
+                  <span class="status-badge status-pending">Pending</span>
+                  <div class="card-title-short">Stage 4</div>
+                </div>
+                <div class="card-details">
+                  <span class="status-badge status-pending">Pending / Not Started</span>
+                  <h3>Stage 4: Thesis Writing and Curation Strategy</h3>
+                  <p>Drafting the final thesis and implementing a data curation strategy to enhance project comprehension.</p>
+                  <ul>
+                    <li>Layout design and formatting of tables</li>
+                    <li>Creation of complementary figures</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- GSAP & ScrollTrigger Scripts (Loaded via CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  <script>
+    /* Portfolio Tab Navigation Function */
+    function switchTab(event, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+
+      /* Refresh GSAP ScrollTrigger if switching to projects tab */
+      if (tabId === 'proyectos' && typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
+    }
+
+    /* GSAP Animations for Interactive Timeline */
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. Initial Cascade Appearance
+        const masterTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".timeline-container",
+            start: "top 85%",
+            toggleActions: "play none none none"
+          }
+        });
+
+        masterTimeline.to(".timeline-item", {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.2,
+          ease: "power3.out"
+        });
+
+        // 2. Interactive Click Animation (Width: 670px, Persistent State)
+        const nodes = document.querySelectorAll(".timeline-node");
+
+        nodes.forEach(node => {
+          const targetCardId = node.getAttribute("data-target");
+          const card = document.getElementById(targetCardId);
+          const frontContent = card.querySelector(".card-front-content");
+          const detailsContent = card.querySelector(".card-details");
+
+          const hoverTl = gsap.timeline({ paused: true });
+
+          hoverTl.to(card, {
+            zIndex: 100,
+            rotation: 360,
+            x: 140,
+            duration: 0.6,
+            ease: "power2.inOut"
+          })
+          .to(frontContent, { opacity: 0, duration: 0.1 }, "-=0.3")
+          .to(card, {
+            width: 670,
+            height: 220,
+            duration: 0.4,
+            ease: "power2.out"
+          })
+          .to(detailsContent, {
+            opacity: 1,
+            pointerEvents: "auto",
+            duration: 0.3
+          });
+
+          let isOpen = false;
+
+          // Node click event to toggle state and keep it open
+          node.addEventListener("click", (e) => {
+            e.stopPropagation();
+            isOpen = !isOpen;
+            if (isOpen) {
+              node.classList.add("active-node");
+              hoverTl.play();
+            } else {
+              node.classList.remove("active-node");
+              hoverTl.reverse();
+            }
+          });
+
+          // Close if clicking outside the card or active node
+          document.addEventListener("click", (e) => {
+            if (isOpen && !card.contains(e.target) && !node.contains(e.target)) {
+              isOpen = false;
+              node.classList.remove("active-node");
+              hoverTl.reverse();
+            }
+          });
+        });
+
+      } else {
+        document.querySelectorAll(".timeline-item").forEach(item => {
+          item.style.opacity = 1;
+          item.style.transform = "translateY(0)";
+        });
+      }
+    });
+  </script>
+</body>
+</html>
